@@ -1,15 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @strategy.title %>
-</p>
-
-<p>
-  <b>Vision:</b>
-  <%= @strategy.vision %>
-</p>
-
+<div style="text-align: center">
+  <span class="muted">Strategy for:</span>
+  <h1 contenteditable="true">
+    <%= @strategy.title %>
+  </h1>
+  <hr>
+  <p class="lead"><span class="muted">Vision:</span> <span contenteditable="true"><%= @strategy.vision %></span>
+  </p>
+</div>
 
 <%= link_to 'Edit', edit_strategy_path(@strategy) %> |
 <%= link_to 'Back', strategies_path %>
