@@ -1,24 +1,16 @@
-<h1>Listing strategies</h1>
-
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Vision</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>My Strategies</h1>
 
 <% @strategies.each do |strategy| %>
-  <tr>
-    <td><%= strategy.title %></td>
-    <td><%= strategy.vision %></td>
-    <td><%= link_to 'Show', strategy %></td>
-    <td><%= link_to 'Edit', edit_strategy_path(strategy) %></td>
-    <td><%= link_to 'Destroy', strategy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+  <div class="strategies">
+    <h2><%= strategy.title %></h2>
+    <p class="lead"><%= strategy.vision %></p>
+    <div class="admin-links">
+      <span><%= link_to 'Show', strategy %></span>
+      <span><%= link_to 'Edit', edit_strategy_path(strategy) %></span>
+      <span><%= link_to 'Destroy', strategy, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    </div>
+  </div>
 <% end %>
-</table>
 
 <br />
 
