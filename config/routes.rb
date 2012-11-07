@@ -1,8 +1,14 @@
 RailsDemo::Application.routes.draw do
+  resources :goals
+
   get "home/index"
 
   resources :strategies
 
+
+  resources :strategies do
+    resources :goals
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
