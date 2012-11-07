@@ -8,6 +8,17 @@
   <hr>
   <p class="lead"><span class="muted">Vision:</span> <span contenteditable="true"><%= @strategy.vision %></span>
   </p>
+  <div>
+    <% @strategy.goals.each do |goal| %>
+      <h3><%= goal.title %></h3>
+      <p><%= goal.description %></p>
+
+      <% goal.tasks.each do |task| %>
+        <h3><%= task.title %></h3>
+        <p><%= task.description %></p>
+      <% end %>
+    <% end %>
+  </div>
 </div>
 
 <%= link_to 'Edit', edit_strategy_path(@strategy) %> |
