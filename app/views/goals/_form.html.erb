@@ -1,13 +1,19 @@
 <%= form_for([@strategy, @strategy.goals.build]) do |f| %>
   <div class="field">
-    <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%#= f.label :title %>
+    <%= f.text_field :title,
+                     :placeholder => 'Name your goal',
+                     :class => 'span5' %>
   </div>
   <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description, { 'rows' => 5 } %>
+    <%#= f.label :description %>
+    <%= f.text_area :description,
+                    :rows => 3,
+                    :placeholder => 'Describe your goal',
+                    :class => 'span5' %>
   </div>
   <div class="actions">
-    <%= f.submit 'Add Goal', :class => 'btn btn-success' %>
+    <%= f.submit 'Add Goal',
+                 :class => 'btn btn-success' %>
   </div>
 <% end %>
