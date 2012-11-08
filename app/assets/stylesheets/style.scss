@@ -33,3 +33,14 @@ footer {
 .align-center {
   text-align: center;
 }
+
+// Goal
+.goal {
+  position: relative;
+
+  .btn-group {
+    position: absolute;
+    top: 10px;
+    left: 9px;
+  }
+}

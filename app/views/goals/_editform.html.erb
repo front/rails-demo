@@ -1,0 +1,13 @@
+<%= form_for([@strategy, @goal]) do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, { 'rows' => 5 } %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Edit Goal', :class => 'btn' %>
+  </div>
+<% end %>

@@ -6,4 +6,6 @@ class Strategy < ActiveRecord::Base
                           :length => { :minimum => 5 }
 
   has_many :goals, :dependent => :destroy
+
+  accepts_nested_attributes_for :goals
 end
