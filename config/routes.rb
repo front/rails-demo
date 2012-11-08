@@ -1,6 +1,8 @@
 RailsNewdemo::Application.routes.draw do
   resources :strategies do
-    resources :goals
+    resources :goals do
+      resources :tasks
+    end
   end
 
   get "home/index"
