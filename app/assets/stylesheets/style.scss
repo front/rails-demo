@@ -34,6 +34,17 @@ footer {
   text-align: center;
 }
 
+// Strategy
+.strategy {
+  position: relative;
+
+  .btn-group {
+    position: absolute;
+    top: 5px;
+    left: 0;
+  }
+}
+
 // Goal
 .goal {
   position: relative;
