@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Strategy Maker</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body data-spy="scroll" data-target=".subnav" data-offset="50">
+
+  <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'Strategy Maker', '/', :class => 'brand' %>
+        <div class="nav-collapse collapse">
+          <ul class="nav pull-right">
+            <li><%= link_to "My Strategies", strategies_path %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Per André Rønsen <b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">My Account</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Log out</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<div class="align-center">
+  <span class="muted">Strategy for:</span>
+  <h1><%= @strategy.title %></h1>
+  <hr>
+  <p class="lead"><span class="muted">Vision:</span> <%= @strategy.description %></p>
+</div>
+
+<hr>
+
+<div class="btn-group">
+  <%= link_to 'Edit', edit_strategy_path(@strategy), :class => 'btn' %>
+  <%= link_to 'Back', strategies_path, :class => 'btn' %>
+</div>
+
+<hr>
+
+<!-- GOALS -->
+<div class="row">
+  <%= render @strategy.goals %>
+</div>
+
+<h2 class="muted">Add new goal</h2>
+<%= render 'goals/form' %>

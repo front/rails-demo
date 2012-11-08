@@ -1,0 +1,31 @@
+<div class="goal span6">
+  <div class="well">
+    <div class="btn-group">
+      <% #= link_to 'Edit', edit_strategy_path(goal), :class => 'btn btn-mini' %>
+      <%= link_to 'Delete goal', [goal.strategy, goal],
+                  :confirm => 'Are you sure?',
+                  :method => :delete,
+                  :class => 'btn btn-mini' %>
+    </div>
+
+    <div class="align-center">
+      <span class="muted align-center"><%= goal.title %></span>
+      <h2><%= goal.description %></h2>
+    </div>
+    <hr>
+    <div class="actions">
+      <h4 class="muted">To achieve this goal, I will:</h4>
+      <blockquote class="todo">
+        <p contenteditable="true">
+          <strong>Call my friends to check if they want to work there.</strong>
+        </p>
+        <p>
+          <span>My challenges: <span contenteditable="true">I don't have a company yet.</span>
+        </p>
+        <p>
+          <small>Starting: 17.12.1012</small>
+        </p>
+      </blockquote>
+    </div>
+  </div>
+</div>

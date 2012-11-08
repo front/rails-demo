@@ -1,0 +1,20 @@
+<div class="page-header">
+  <h1>Strategies</h1>
+</div>
+
+<% @strategies.each do |strategy| %>
+  <div>
+    <h2><%= link_to strategy.title, strategy %></h2>
+    <p><%= strategy.description %></p>
+
+    <div class="btn-group">
+      <%= link_to 'Show', strategy, :class => 'btn btn-mini' %>
+      <%= link_to 'Edit', edit_strategy_path(strategy), :class => 'btn btn-mini' %>
+      <%= link_to 'Delete', strategy, :class => 'btn btn-mini', method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+<% end %>
+
+<hr />
+
+<%= link_to 'New Strategy', new_strategy_path, :class => 'btn btn-large btn-success' %>
