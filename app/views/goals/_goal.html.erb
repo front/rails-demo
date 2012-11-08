@@ -13,20 +13,43 @@
       <span class="muted align-center"><%= goal.title %></span>
       <h2><%= goal.description %></h2>
     </div>
+
     <hr>
+
     <div class="actions">
-      <h4 class="muted">To achieve this goal, I will:</h4>
-      <blockquote class="todo">
-        <p contenteditable="true">
-          <strong>Call my friends to check if they want to work there.</strong>
-        </p>
-        <p>
-          <span>My challenges: <span contenteditable="true">I don't have a company yet.</span>
-        </p>
-        <p>
-          <small>Starting: 17.12.1012</small>
-        </p>
-      </blockquote>
+      <h4 class="muted">To achieve this goal, I need to:</h4>
+      <% goal.tasks.each do |task| %>
+        <blockquote class="todo">
+          <p>
+            <strong><%= task.title %></strong>
+          </p>
+          <p>
+            <%= task.description %>
+          </p>
+          <p>
+            <small>Due: <%= task.duedate %></small>
+          </p>
+        </blockquote>
+      <% end %>
     </div>
+
+    <div class="align-center">
+      <%= link_to "Add new task", "#addTask#{goal.id}",
+                                :class => "btn",
+                                :role => "button",
+                                "data-toggle" => "modal"
+                                %></div>
+  </div>
+</div>
+
+<!-- Task -->
+<div id="addTask<%= goal.id %>" class="modal hide fade" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>New task</h3>
+  </div>
+  <div class="modal-body">
+    <%= render :partial => 'tasks/form',
+               :locals => { :goal => goal } %>
   </div>
 </div>
