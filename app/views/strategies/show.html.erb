@@ -19,5 +19,21 @@
   <%= render @strategy.goals %>
 </div>
 
-<h2 class="muted">Add new goal</h2>
-<%= render 'goals/form' %>
+<div class="align-center">
+  <%= link_to 'Add new goal', '#addGoal',
+                              :class => 'btn btn-large btn-primary',
+                              :role => 'button',
+                              'data-toggle' => 'modal'
+                              %>
+</div>
+
+<!-- Modal -->
+<div id="addGoal" class="modal hide fade" tabindex="-1" role="dialog">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal">×</button>
+    <h3>New goal</h3>
+  </div>
+  <div class="modal-body">
+    <%= render 'goals/form' %>
+  </div>
+</div>
